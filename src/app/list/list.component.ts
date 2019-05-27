@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ListComponent implements OnInit, OnDestroy {
   contacts: Contact[];
+  filterString:string='';
   subscription: Subscription;
   constructor(private contactService:ConatctsService) { }
 

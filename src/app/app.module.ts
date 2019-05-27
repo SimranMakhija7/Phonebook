@@ -9,7 +9,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { EditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { FormsModule } from '@angular/forms';
+import { ContactSearchPipe } from './contact-search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     DetailsComponent,
     ListItemComponent,
     ContactsComponent,
-    EditComponent
+    EditComponent,
+    ContactSearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //FormsModule
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

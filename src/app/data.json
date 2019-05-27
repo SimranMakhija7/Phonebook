@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Harry Potter",
+        "profession":"DADA Professor",
+        "phone":9658741230,
+        "address":"Cupboard Under the stairs, 4, Privet Drive"
+    },
+    {
+      "name":"Ginny Weasley",
+      "profession":"seeker",
+      "phone":9564821703,
+      "address":"The Burrow"
+    }
+  ]

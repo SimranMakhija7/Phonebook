@@ -1,0 +1,26 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Contact details
+      <span class="float-right">
+        <button class="btn btn-primary" (click)="onEdit()" routerLink="edit">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+      </span>
+    </div>
+    <div class="card-body text-primary">
+      <h4 class="card-title">{{ contact.name }} </h4>
+      <div class="card-text">
+        <small><em>{{ contact.profession}}</em></small>
+          <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th scope="row">Phone Number</th>
+                  <td>{{ contact.phone }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Address</th>
+                    <td>{{ contact.address }}</td>
+                  </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>

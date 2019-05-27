@@ -1,0 +1,19 @@
+<!-- <form (ngSubmit)="onSearch(f)" #f="ngForm">
+  <div class="input-group mb-3">
+    <input 
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    ngModel
+    >
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+    </div>
+  </div>
+</form> -->
+<div class="list-group">
+  <app-list-item
+  *ngFor="let contact of contacts, let i=index"
+  [contact]="contact" [index]="i"
+  ></app-list-item>
+</div>

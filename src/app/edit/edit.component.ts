@@ -45,14 +45,14 @@ export class EditComponent implements OnInit, OnDestroy {
     //     this.editedItemIndex=index;
     //     this.editItem=this.contactsService.getContact(this.editedItemIndex);
     //     console.log(this.editItem)
-          
+          if(this.contactsService.editMode){
           this.editForm.setValue({
             address:this.contactsService.editItem.address,
             name: this.contactsService.editItem.name,
             phone:this.contactsService.editItem.phone,
             profession:this.contactsService.editItem.profession
           });      
-      
+        }
     // setTimeout(()=>{
     //   console.log("out of it :" + this.editedItemIndex);
     // },3000);
@@ -83,6 +83,7 @@ export class EditComponent implements OnInit, OnDestroy {
             }
           }
             this.contactsService.editMode=false;
+            this.editForm.reset();
             this.router.navigate(['/contacts']);
     }
   // onSubmit(form: NgForm){

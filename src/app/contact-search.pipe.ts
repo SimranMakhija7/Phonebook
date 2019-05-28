@@ -10,7 +10,7 @@ export class ContactSearchPipe implements PipeTransform {
     if(contactList.length===0){
       return contactList;
     }else{
-      const resultArray = contactList.filter(item => item.name.includes(filterString));
+      const resultArray = contactList.filter(item => item.name.toLowerCase().includes(filterString.toLowerCase()));
       return resultArray;
     }
    }

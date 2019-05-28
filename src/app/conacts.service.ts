@@ -1,6 +1,6 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Contact } from './contact.model';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,32 +16,38 @@ export class ConatctsService {
   private contacts: Contact[] =[
     new Contact(
       'Harry Potter',
-      'DADA Professor',
+      'Wizard',
       9658741230,
       'Cupboard Under the stairs, 4, Privet Drive'
     ),
     new Contact(
       'Ginny Weasley',
-      'The best seeker in the world',
+      'Wizard',
       9564821703,
       'The Burrow'
     ),
     new Contact(
-      'Harry Potter',
-      'DADA Professor',
-      9658741230,
-      'Cupboard Under the stairs, 4, Privet Drive'
+      'Will Herondale',
+      'ShadowHunter',
+      1234567890,
+      'London Shadowhunter Academy'
     ),
     new Contact(
-      'Ginny Weasely',
-      'The best seeker in the world',
-      9564821703,
-      'The Burrow'
+      'Jace Herondale',
+      'Shadowhunter',
+      1234567890,
+      'New York Shadowhunter Academy'     
+    ),
+    new Contact(
+      'Hermione Granger',
+      'Wizard',
+      1234567890,
+      'Hogwarts'
     )
   ];
 
 
-  constructor(){ }
+  constructor( ){ }
   getContacts(){
     return this.contacts.slice();
   }
@@ -66,4 +72,5 @@ export class ConatctsService {
     this.editItem=this.contacts[index];
     this.editMode=true;
   }
+
 }

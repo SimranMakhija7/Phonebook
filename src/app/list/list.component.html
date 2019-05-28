@@ -1,3 +1,8 @@
+<div>
+  {{ (item | async)?.name }}
+</div>
+
+
 
 <div class="input-group mb-3">
     <input 
@@ -7,7 +12,7 @@
     [(ngModel)]='filterString'
     >
     <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+      
     </div>
   </div>
 <div class="list-group">

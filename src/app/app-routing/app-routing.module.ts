@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { DetailsComponent } from '../details/details.component';
 import { EditComponent } from '../edit/edit.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const appRoutes: Routes=[
   { path:'', redirectTo:'/contacts', pathMatch:'full'},
@@ -11,7 +12,9 @@ const appRoutes: Routes=[
     {path:'new',component:EditComponent},
     {path:':id',component:DetailsComponent},
     {path:':id/edit',component:EditComponent}
-  ] }
+  ] },
+  {path:'error',component:PageNotFoundComponent},
+  {path:'**',redirectTo:'/error'}
 ];
 
 @NgModule({

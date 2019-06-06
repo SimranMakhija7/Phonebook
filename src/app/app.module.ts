@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { PushNotificationsModule } from 'ng-push';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -11,6 +12,11 @@ import { EditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactSearchPipe } from './contact-search.pipe';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,13 +26,18 @@ import { FormsModule } from '@angular/forms';
     ListItemComponent,
     ContactsComponent,
     EditComponent,
-    ContactSearchPipe
+    ContactSearchPipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PushNotificationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

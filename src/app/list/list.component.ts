@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ComponentFactoryResolver } from '@angular/core';
 import { ConatctsService } from '../conacts.service';
 import { Contact } from '../contact.model';
 import { Subscription } from 'rxjs';
-
+//import { PushNotificationsService} from 'ng-push';
+// import { NodeInjectorFactory } from '@angular/core/src/render3/interfaces/injector';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -10,20 +11,27 @@ import { Subscription } from 'rxjs';
 })
 
 export class ListComponent implements OnInit, OnDestroy {
-  contacts: Contact[];
+  contacts;
   filterString:string='';
   subscription: Subscription;
   
   constructor(private contactService:ConatctsService){
-    
+      
   }
 
+
+
   ngOnInit() {
-    this.contacts=this.contactService.getContacts();
+    this.contactService.getContacts().subscribe(contacts=>
+      {
+        this.contacts=contacts;
+      });
+    //this.contactService.getContacts();
+    console.log(this.contacts);
     this.subscription=this.contactService.contactsChanged
     .subscribe(
       (contacts:Contact[])=>{
-        this.contacts=contacts;
+        this.contacts=contacts;      
       }
     );
   }

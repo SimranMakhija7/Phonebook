@@ -14,7 +14,7 @@ import { ContactSearchPipe } from './contact-search.pipe';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { HttpModule } from '@angular/http';
 

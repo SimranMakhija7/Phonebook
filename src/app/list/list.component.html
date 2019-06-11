@@ -17,7 +17,7 @@
   </div>
 <div class="list-group">
   <app-list-item
-  *ngFor="let contact of contacts , let i=index"
+  *ngFor="let contact of contacts | contactSearch :filterString, let i=index"
   [contact]="contact" [index]="i"
   ></app-list-item>
 </div>
